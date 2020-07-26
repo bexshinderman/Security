@@ -4,6 +4,9 @@ Created on Wed Jul 22 23:28:03 2020
 
 @author: Bex.0
 """
+
+
+from collections import Counter
 #plain text to perform cipher on
 input_string = "abccc"
 
@@ -26,15 +29,16 @@ if letter in probability:
     print('probability of', letter, probability[letter])
     
 
-frequency_table = {} 
 for i in range(len(input_string)):
     position_number = i
     print("position number", position_number)
     position_character = input_string[i]
     print("position character", position_character)
-    frequency_table[i] = frequency_table.get(i, 0) + 1
-    print(frequency_table[i])
-    
+    char_count = input_string.count(position_character)
+    print("amount of ", position_character, "in", input_string, "is", char_count)
+
+    char_count = input_string.count(position_character)
+    print(char_count)
     letter = position_character
     chi_squared = {}
     if letter in probability:
@@ -49,6 +53,7 @@ for i in range(len(input_string)):
 #create dictionary with monogram frequencies
 #count length of input phrase
 #for each alphabetical character in input_string
+    # find frequency of chaar
     #find alphabetical character's corresponding monogram frequency in dictionary i.e if letter is A probability is 0.08167
     #chi-squared = (letter freq in phrase - (length * monogramfreq)**2)/2
     #multiply chi-squared by 1000
